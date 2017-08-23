@@ -1,0 +1,52 @@
+<html ng-app="calculater">
+
+    <head>
+
+
+
+<scipt src="angular.js"></scipt>
+
+
+<script> "angcal.js" </script>
+
+
+
+    </head>
+
+
+
+    <body>
+
+
+<h1> calculater app </h1>
+<div ng-controller="calculater as ct">
+
+
+<input type= "text" ng-model="ct.input1"> </input>    
+
+<span ng-bind="ct.select">   </span>
+
+<input type= "text" ng-model="ct.input2">  </input>    
+
+<button>=</button>
+
+<p>
+<button ng-click="ct.plussButton()"> + </button>
+
+<button> - </button>
+
+<button> * </button>
+
+<button> / </button>
+
+    </p>
+
+
+    {{ct.input1}  {{ct.input2}}
+
+
+
+
+</div>
+
+</html>

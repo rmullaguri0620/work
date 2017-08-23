@@ -1,0 +1,62 @@
+
+body{
+	
+	background-image:url(Bc.jpg)
+        
+        
+}
+h1{
+width:500px;
+height:40px;
+text-align:center;
+}
+
+a:link,a:visited{
+	
+	text-decoration:none;
+	color:#589632;
+	font-weight:bold;
+	padding-bottom: 5px;
+}
+a:hover{
+	color:red;
+}
+
+
+nav ul{
+	
+	list-style:none;
+	float:left;
+	
+}
+
+nav li{
+	
+	display:inline;
+	float:left;
+	
+}
+
+nav a:link,nav a:visited{
+	
+	background-color:Red;
+	text-align:center;
+	width:80px;
+	display:block;
+	color:white;
+	
+	
+}
+nav a:hover{
+	
+	color:black;
+	
+}
+
+div{
+    
+    width:700px;
+    height: 250px;
+    border: 2px solid red;
+    padding:50 50 80 50;
+}

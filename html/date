@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<form>
+
+Enter the travle date 
+
+<input type="date" name="days">
+
+number of travel <input type="number of days" min="0"  max="20">
+
+
+
+</form>
+
+
+</body>
+
+
+</html>

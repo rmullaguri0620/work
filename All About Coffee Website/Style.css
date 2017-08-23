@@ -1,0 +1,164 @@
+body{
+	
+	font-family: 'Titillium Web', sans-serif;
+width:960px;
+
+
+
+}
+
+
+
+h1,h2,h3,h4{
+	
+	color:green;
+}
+
+ul{
+	
+	list-style-image:url("images/tiny-coffee-cup.gif");
+}
+ol{
+	
+		list-style-image:url("images/tiny-coffee-cup.gif");
+
+}
+
+a:link,a:visited{
+	
+	text-decoration:none;
+	color:#589632;
+	font-weight:bold;
+	
+}
+a:hover{
+	color:red;
+}
+
+
+nav ul{
+	
+	list-style:none;
+	float:left;
+	
+}
+
+nav li{
+	
+	display:inline;
+	float:left;
+	
+}
+
+nav a:link,nav a:visited{
+	
+	background-color:Red;
+	text-align:center;
+	width:80px;
+	display:block;
+	color:white;
+	
+	
+}
+nav a:hover{
+	
+	color:black;
+	
+}
+H1{
+	
+	color:red;
+	margin:0;
+	padding-left:25px;
+	text-align:center;
+font-family:areial;
+}
+
+
+div{
+	
+	width:1050px;
+	
+}
+
+aside{
+	
+	width:500px;
+float: right;
+background-color:gray;
+padding-left:5px;
+font-weight:bold;
+font-family:armenian;
+margin-left:50px;
+	}
+#B{
+	width:750px;
+
+	padding-top:30px;
+}
+
+.photo{
+	
+margin-right:30px;
+	float:left;
+}
+#BR{
+	BORDER:1PX SOLID Red;
+	
+	
+}
+
+#one{
+	
+		BORDER:1PX SOLID Red;
+		margin:10px;
+		height:70px;
+		padding:0 0 5px; 30px;
+		background:red;;
+
+}
+
+
+#second	{
+	
+	BORDER:2px SOLID black;
+}
+
+
+#main{
+	
+			BORDER:2px SOLID black;
+			padding-left:70px;
+			padding-right:70px;
+
+}
+
+figure img{
+	
+	float:right;
+}
+
+
+
+td,th{
+	border:2px solid black;
+	
+	
+}
+th{
+	
+	background-color:yellow;
+}
+
+
+table{
+	
+	padding-left:350px;
+	padding-top:30px;
+	
+	border-spacing:0px;
+}
+
+name{
+	width:50px;
+}

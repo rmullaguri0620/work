@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+	.whole{
+		width: 650px;
+		height: 250px;
+		border-radius: 10px;
+		padding-bottom: 50px;
+        padding-top: 50px;
+		background-color: beige;
+		margin-left: 15px;
+	}
+	p{
+		font-family:areial;
+		font-style: bold;
+		text-align: center;
+		font-size: 200% ;
+        padding-bottom: 10px;
+		
+	}
+	#zip,#user{
+		text-align: center;
+		border-radius: 5px;
+		margin-right: 19px;
+		margin-left: 10px;
+		background-color:aliceblue;
+	}
+	#zip::placeholder,#user::placeholder{
+		color: brown;
+	}
+	
+	#search,#gitb{
+		border-radius: 5px;
+		width: 70px;
+	}
+	#part2{
+		height:200px;
+		width:350px;
+		padding-bottom:100px;
+        padding-top: 100px;
+        padding-left: 50px;
+		background-color: dimgrey
+
+
+	}
+	#display2{
+		margin-top: 10px;
+		text-align: center;
+		height: 170p;
+		width: 350px;
+		border-radius: 10px ;
+		margin-left: 10px;
+		float: left;
+	}
+</style>
+</head>
+<body>
+    <div>
+        
+        <h1> Weather Report </h1>
+            
+    </div>
+    
+<div class="whole">
+<p><b>weather application</b></p>
+<form id="myform">
+<input type="text" name="zip" placeholder="enter zip" id="zip" autofocus >
+<input type="button" name="search" id="search" value="search" onclick="checkzip();">
+</form>
+<div id="display"></div>
+<script>  
+  function checkzip()  
+  { 
+  	var a = document.forms["myform"]["zip"].value; 
+	var Check = /^\d{5}$/;
+	if(!a.match(Check)){
+		alert("Enter valid 5 digit zip code");  
+		return false;  
+	}  
+}   
+</script>
+<script>
+$(document).ready(function(){
+	$("#search").click(function(){
+		var zip=$("#zip").val();
+		if(zip!='')
+		{
+			$.ajax({
+				url:'http://api.openweathermap.org/data/2.5/weather?zip='+zip+"&units=metric"+"&APPID=bf41925897a79ff5653e3cbe18a846ce",
+				type:"GET",
+				datatype:"jsonp",
+				jsonpCallback: "response",
+				success:function(data)
+				{
+					var widget=show(data);
+					$("#display").html(widget);
+				}
+			})
+		}
+		else{
+			$("error").html("file not loaded");
+		}
+	});
+});
+function show(data){
+	return "<h2>Area:"+data.name +" </h2>"+
+	"<h2>Temparature :"+data.main.temp+"°C</h2>"+
+	"<h2>Weather:"+data.weather[0].main +" </h2>";
+}
+</script>
+</div>
+<div class="whole" id="part2">
+<p><b>Github application</b></p>
+<form id="myform2">
+<input type="text" name="user" id="user" placeholder="user name" ">
+<input type="button" name="search" id="gitb" value="search" onclick="checkusername();">
+</form>
+<div id="display2"></div>
+<script>  
+  function checkusername()  
+  { 
+  	var x = document.forms["myform2"]["user"].value; 
+	if (x == null || x == "")
+	{
+		alert("Enter valid user name");  
+		return false;  
+	}  
+}   
+</script>
+<script>
+$(document).ready(function(){
+	$("#gitb").click(function(){
+		var user=$("#user").val();
+		if(user!='')
+		{
+			$.ajax({
+				url:'https://api.github.com/users/'+user,
+				type:"GET",
+				datatype:"jsonp",
+				jsonpCallback: "response",
+				success:function(data2)
+				{
+					var widget2=show2(data2);
+					$("#display2").html(widget2);
+				}
+			})
+		}
+		else{
+			$("error").html("file not loaded");
+		}
+	});
+});
+function show2(data2){
+	return "<h2>login id:"+data2.id +" </h2>"+
+	"<h2>login name :"+data2.login+"</h2>"+
+	"<h2>created at :"+data2.created_at+"</h2>"+
+	"<h2>email :"+data2.email+"</h2>"
+	;
+}
+</script>
+</div>
+</div>
+</body>
+</html>

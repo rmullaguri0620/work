@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html ng-app>
+
+    <head>
+
+<scipt src="angular.js"></scipt>
+
+    </head>
+
+  <body>
+
+<h1> Clock app </p>
+
+<div ng-controller="Time">
+
+<p> the current time :{{tm}} </p>
+
+</div>
+
+<script>
+
+var app = angular.moudle("clock",[]);
+app.controller("Time",timeD);
+
+
+function timeD($scope){
+
+
+    var date = new Date ();
+
+    $scope. tm = currentdate.toTimeString();
+}
+
+    </script>
+
+  </body>
